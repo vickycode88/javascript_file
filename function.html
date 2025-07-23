@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function show(x, y, z) {
+        //     console.log('Hello, ', x, y, z)
+        //     console.log('Arguments: , ', arguments[0], arguments[1], arguments[2])
+        // }
+        // show(100, 200, 300)
+
+
+        function argu(x, y) {
+            document.write("value of x:", x, "<br>")
+            document.write("value of y:", y, ",br>")
+
+            document.write("value of x:", arguments[0], "<br>")
+            document.write("value of y:", arguments[1], ",br>")
+
+            document.write("length of arguments:", arguments.length, "<br>")
+
+        }
+        argu(10, 20, 30)
+    </script>
+</body>
+
+</html>
