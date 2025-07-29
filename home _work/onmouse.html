@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <h1 id="head">Counter</h1>
+        <div class="operation">
+            <input type="text" id="inp" value="0">
+            <button  id="inc">increase</button>
+            <button id="reset">reset</button>
+            <button id="dec">decrease</button>
+        </div>
+    </div>
+
+    <script>
+        let input = document.getElementById('inp')
+        let incr = document.getElementById('inc')
+        let reset = document.getElementById('reset')
+        let decr = document.getElementById('dec')
+        let v = input.value
+
+        console.log(v)
+
+        incr.onclick = function(){
+            v++
+            input.value = v
+        }
+        reset.onclick = function(){
+            v = 0
+            input.value = v
+        }
+        decr.onclick = function(){
+            v--
+            input.value = v
+        }
+    
+
+    </script>
+</body>
+
+</html>
