@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('start')
+
+        function avenger(name, callback) {
+            setTimeout(() => {
+                console.log('inside avenger function')
+                callback(name)
+            }, 2000)
+        }
+
+        function heroic_name(name1, callback) {
+            setTimeout(() => {
+                console.log('inside heroic function')
+                callback(name1)
+            })
+        }
+
+
+        function enemy(name2, callback) {
+            setTimeout(() => {
+                console.log('inside heroic function')
+                callback(name2)
+            })
+        }
+
+        avenger('steve', (nm) => {
+            console.log(nm)
+            heroic_name(nm, (hn) => {
+                if (hn == 'steve') {
+                    console.log('i can do this all day')
+                    hn = "Red Skull"
+                }
+                else {
+                    console.log("No hero can do this")
+                }
+                enemy(hn, (en) => {
+                    if (en == "Red Skull") {
+                        console.log("Meet me on Vlomir")
+                    }
+                    else {
+                        console.log("hail hydra!")
+                    }
+                })
+            })
+
+        })
+
+        console.log("end")
+
+
+
+    </script>
+</body>
+
+</html>
