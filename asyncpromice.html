@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('start')
+
+        function avenger(name) {
+            return new Promise((resolve, reject) => {
+
+                setTimeout(() => {
+                    console.log('inside avenger function')
+                    resolve(name)
+                })
+
+            })
+
+        }
+
+        function heroic_name(name1) {
+            return new Promise((resolve, reject) => {
+
+                setTimeout(() => {
+                    console.log('inside Heroic function')
+                    resolve(name1)
+                })
+
+            })
+        }
+
+
+        function enemy(name2) {
+            return new Promise((resolve, reject) => {
+
+                setTimeout(() => {
+                    console.log('inside enemy function')
+                    resolve(name2)
+                })
+
+            })
+        }
+
+        // async function mission() {
+
+        //     let nm = await avenger('steve')
+        //     console.log(nm)
+
+        //     let hn = await heroic_name(nm)
+        //     if (hn == 'steve') {
+        //         console.log('i can do this all day')
+        //         hn = "Red Skull"
+        //     }
+        //     else {
+        //         console.log("No hero can do this")
+        //     }
+        //     let en = await enemy(hn)
+        //     if (en == "Red Skull") {
+        //         console.log("Meet me on Vlomir")
+        //     }
+        //     else {
+        //         console.log("hail hydra!")
+
+
+        //     }
+        // }
+
+        // mission()
+
+
+
+        avenger('steve').then(
+            nm => {
+                console.log(nm)
+                return heroic_name(nm)
+            }
+        ).then(
+            hn => {
+                if (hn == 'steve') {
+                    console.log('i can do this all day')
+                    hn = "Red Skull"
+                }
+                else {
+                    console.log("No hero can do this")
+
+                }
+                return enemy(hn)
+            }
+
+
+        ).then(
+            en => {
+                if (en == "Red Skull") {
+                    console.log("Meet me on Vlomir")
+                }
+                else {
+                    console.log("hail hydra!")
+                }
+            }
+        )
+        
+
+
+
+
+
+
+
+
+
+        // avenger('steve').then((resolve, reject) => {
+        //     console.log(nm)
+        // })
+
+
+
+        //     heroic_name(nm, (hn) => {
+        //         if (hn == 'steve') {
+        //             console.log('i can do this all day')
+        //             hn = "Red Skull"
+        //         }
+        //         else {
+        //             console.log("No hero can do this")
+        //         }
+        //         enemy(hn, (en) => {
+        //             if (en == "Red Skull") {
+        //                 console.log("Meet me on Vlomir")
+        //             }
+        //             else {
+        //                 console.log("hail hydra!")
+        //             }
+        //         })
+        //     })
+
+        // })
+
+        // avenger('steve', (nm) => {
+        //     console.log(nm)
+        //     heroic_name(nm, (hn) => {
+        //         if (hn == 'steve') {
+        //             console.log('i can do this all day')
+        //             hn = "Red Skull"
+        //         }
+        //         else {
+        //             console.log("No hero can do this")
+        //         }
+        //         enemy(hn, (en) => {
+        //             if (en == "Red Skull") {
+        //                 console.log("Meet me on Vlomir")
+        //             }
+        //             else {
+        //                 console.log("hail hydra!")
+        //             }
+        //         })
+        //     })
+
+        // })
+
+        console.log("end")
+
+
+
+    </script>
+</body>
+
+</html>
